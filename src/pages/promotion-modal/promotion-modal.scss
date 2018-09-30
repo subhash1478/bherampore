@@ -1,0 +1,20 @@
+page-promotion-modal {
+    .content{
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .bnr-add-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .btn-close-Add{
+        background: transparent;
+        color: #ed7700;
+        font-size: 24px;
+        padding: 0;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+    }
+}

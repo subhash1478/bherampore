@@ -1,0 +1,59 @@
+<!--
+  Generated template for the CheckoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <h3 text-center *ngIf="cartEmpty"> Your cart is empty </h3>
+
+  <ion-list *ngIf="!cartEmpty">
+    <ion-item class="alignitmtotal">
+      <ion-row class="prcelst header-tp">
+        <ion-col col-6 text-left>Edit cart</ion-col>
+       </ion-row>
+        <h2 class="h-one">{{shop.name}}</h2>
+      <ion-row class="prcelst" *ngFor="let item of checkoutList;let i=index">
+        <ion-col col-4 text-left>{{item.product_name}}</ion-col>
+         <ion-col col-4 text-center>
+
+          <div class="addbtn">
+            <ion-icon name="remove" (click)="decrement(i)"></ion-icon>
+            <span class="crntcount"> {{ item.quantity }}</span>
+            <ion-icon name="add" (click)="increment(i)"></ion-icon>
+          </div>
+        </ion-col>
+        
+        <ion-col col-4 text-right class="clrblac">{{item.quantity*item.price|currency:'INR'}}</ion-col>
+      </ion-row>
+ 
+      
+    
+      <ion-row class="prcelst totalprnt">
+          <ion-col col-8 text-left>Total</ion-col>
+          <ion-col col-4 text-right class="clrblac">{{sub_total|currency:'INR'}}</ion-col>
+      </ion-row>
+        
+    </ion-item>
+  </ion-list>
+</ion-content>
+  <ion-footer  >
+    <button *ngIf="!cartEmpty" class="btngtn" ion-button large full no-margin (click)="Checkout()" >
+      Checkout <ion-icon name="arrow-forward" class="arrht"></ion-icon>
+    </button>
+    <button ion-button   block *ngIf="cartEmpty" (click)="shopnow()">shop now</button>
+
+  </ion-footer>
+
+  <ion-footer *ngIf="cartEmpty">
+    
+      </ion-footer>

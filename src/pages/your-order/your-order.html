@@ -1,0 +1,90 @@
+<!--
+  Generated template for the YourOrderPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Your Order</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list >
+    <ion-item class="alignitmtop" >
+      <ion-thumbnail item-start>
+        <div [class.greenbtn]="order.shop_accept" [class.redbtn]="!order.shop_accept"></div>
+      </ion-thumbnail>
+      <h2>Shop confirmation</h2>
+      <p *ngIf="order.shop_accept">Done</p>
+      <p *ngIf="!order.shop_accept">wating for confirmation</p>
+    </ion-item>
+    <ion-item class="alignitmtop">
+      <ion-thumbnail item-start>
+        <div [class.greenbtn]="order.shop_accept"  [class.redbtn]="!order.shop_accept"></div>
+      </ion-thumbnail>
+      <h2>Your food is preparing</h2>
+      <p *ngIf="!order.shop_accept">wating for confirmation</p>
+      <p *ngIf="order.shop_accept">Done</p>
+    </ion-item>
+    <ion-item class="alignitmtop">
+      <ion-thumbnail item-start>
+        <div [class.greenbtn]="order.driver_picked"  [class.redbtn]="!order.driver_picked"></div>
+      </ion-thumbnail>
+      <h2>Driver picked your order</h2>
+      <p *ngIf="!order.driver_picked">wating for confirmation</p>
+      <p *ngIf="order.driver_picked">Done</p>
+    </ion-item>
+    <ion-item class="alignitmtop">
+      <ion-thumbnail item-start>
+        <div [class.greenbtn]="order.user_received" [class.redbtn]="!order.user_received"></div>
+      </ion-thumbnail>
+      <h2>Delivered</h2>
+      <p *ngIf="!order.user_received">wating for confirmation</p>
+      <p *ngIf="order.user_received">Done</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item  padding>
+      <h2>Thanks for your order</h2>
+      <p class="txtcd">order code: <span>{{order.orderid}}</span></p>
+      <p class="txtcd">order date: <span>{{order.createdAt|date:'EEEE, MMMM d, y, h:mm a'}}</span></p>
+      <p class="txtcd">Mode of payment: <span>{{(payment_type=='cashpayment')?'cod':'online payment'}}</span></p>
+      <ion-row class="prcelst" *ngFor="let item of productList;let i =index">
+        <ion-col col-6 text-left>{{item.product_name}}</ion-col>
+        <ion-col col-3 text-center>x{{item.product_qty}}</ion-col>
+        <ion-col col-3 text-right>{{item.product_price*item.product_qty|currency:'INR'}}</ion-col>
+      </ion-row>
+      <ion-row class="prcelst subtotal">
+        <ion-col col-8 text-left>Subtotal</ion-col>
+        <ion-col col-4 text-right>{{order.totalprice|currency:'INR'}}</ion-col>
+      </ion-row>
+      <ion-row class="prcelst">
+        <ion-col col-8 text-left>Service fee</ion-col>
+        <ion-col col-4 text-right>₹0</ion-col>
+      </ion-row>
+      <ion-row class="prcelst">
+        <ion-col col-8 text-left>SGST</ion-col>
+        <ion-col col-4 text-right>₹0</ion-col>
+      </ion-row>
+      <ion-row class="prcelst">
+        <ion-col col-8 text-left>Container chargers</ion-col>
+        <ion-col col-4 text-right>₹0</ion-col>
+      </ion-row>
+      <ion-row class="prcelst">
+        <ion-col col-8 text-left>CGST</ion-col>
+        <ion-col col-4 text-right>₹0</ion-col>
+      </ion-row>
+      <ion-row class="prcelst">
+        <ion-col col-8 text-left>Delivery charges <ion-icon name="ios-alert-outline"></ion-icon></ion-col>
+        <ion-col col-4 text-right>₹0</ion-col>
+      </ion-row>
+      <ion-row class="prcelst totalprnt">
+        <ion-col col-8 text-left>Total</ion-col>
+        <ion-col col-4 text-right>{{order.totalprice|currency:'INR'}}</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <button class="btngtn" ion-button block (click)="goToDashboard()">Home</button>
+</ion-footer>

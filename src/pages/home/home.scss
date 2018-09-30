@@ -1,0 +1,101 @@
+page-home {
+    .header .toolbar-ios ion-title{  padding: 0 10px 1px;}
+    ion-slides {
+        display: block;
+        width: 100%;
+    }
+    button {
+        ion-badge {
+            position: absolute;
+            top: -0.2rem;
+            right: -0.2rem;
+            opacity: 0.9;
+    
+            & ~ ion-icon {
+                margin-right: 1.2rem;
+            }
+        }
+    }
+    .swiper-slide{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center !important;
+    }
+    .swiper-pagination-bullet-active {
+        background: #ed7700;
+    }
+    .cate-lst{
+        padding: 0;
+    }
+    .cate-lst .col{
+       text-align: center;
+       padding: 20px 8px;
+       background-color: #f4f4f4;
+    }
+    .cate-lst .col p{
+        color: #686868;
+        font-family: $font-stack1;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    .cate-lst .col img{
+        width: 28px;
+    }
+    .cate-lst .col:nth-child(2),
+    .cate-lst .col:nth-child(4),
+    .cate-lst .col:nth-child(6),
+    .cate-lst .col:nth-child(8),
+    .cate-lst .col:nth-child(10),
+    .cate-lst .col:nth-child(12),
+    .cate-lst .col:nth-child(14),
+    .cate-lst .col:nth-child(16),
+    .cate-lst .col:nth-child(18),
+    .cate-lst .col:nth-child(20),
+    .cate-lst .col:nth-child(22),
+    .cate-lst .col:nth-child(24),
+    .cate-lst .col:nth-child(26),
+    .cate-lst .col:nth-child(28),
+    .cate-lst .col:nth-child(30),
+    .cate-lst .col:nth-child(32),
+    .cate-lst .col:nth-child(34),
+    .cate-lst .col:nth-child(36),
+    .cate-lst .col:nth-child(38),
+    .cate-lst .col:nth-child(40){
+        background-color: #eaeaea;
+    }
+  .mrt10tp{
+      margin: 10px 0;
+  }
+
+   .slder-height{
+        width:100%;
+        // position:absolute
+        //height:300px;
+        // background:grey;
+        // color:red;
+        // text-align:center;
+        // margin-top: 52px;
+   }
+//    .fixed-content{margin-top: 0 !important;}
+//    .scroll-content {margin-top: 0 !important;}
+//    ion-content {
+//         margin-top: 352px;
+//         right: 0;
+//         bottom: 0;
+//         height: auto;
+//     }
+    @media screen and (max-width: 480px){ 
+        // ion-content {
+        //     margin-top: 232px;
+        // }
+        // .slder-height{
+        //     height:180px;
+        // }
+        // ion-slides { 
+        //     height:180px;
+        // }
+       
+    }
+   
+
+}

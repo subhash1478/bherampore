@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="header">
+    <ion-navbar>
+      <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item class="animated fadeIn" *ngFor="let item of postList" (click)="PostdetailsPage(item._id)">
+      <ion-thumbnail item-start>
+        <img  [src]="item.images">
+      </ion-thumbnail>
+      <h2>{{item.title}} </h2> <ion-icon *ngIf="item.prodict_available" class="callIco" item-end  name="cart"></ion-icon>
+      <p >{{item.address}} </p>
+      <p class="rating-txt">  
+      {{item.rating}}
+        <rating [readonly]="true"
+      [(ngModel)]="item.rating" [max]="1" iconClass="star-icon" fullIcon="★" emptyIcon="☆" [titles]="['one', 'two', 'three', 'four', 'five']">
+    </rating>
+     reviews</p>
+    <ion-icon class="callIco" item-end  name="call"></ion-icon>
+    <ion-icon class="pinIco" item-end  name="pin"></ion-icon>
+ 
+   </ion-item>
+</ion-list>
+</ion-content>

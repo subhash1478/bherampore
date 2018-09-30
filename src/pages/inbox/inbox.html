@@ -1,0 +1,33 @@
+<ion-header >
+    <ion-toolbar color="primary">
+
+  <ion-navbar>
+    <ion-title>Inbox</ion-title>
+</ion-navbar>
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+ <ion-list>
+
+    <ion-item (click)="openChat(item)" *ngFor="let item of userList"  class="animated fadeIn"  >
+
+      <ion-avatar item-left>
+        <img *ngIf="item.profile_image!=null" [src]="item.profile_image">
+        <img *ngIf="item.profile_image==null" src="assets/imgs/avatar.png">
+
+        
+      </ion-avatar>
+      <h2>{{item.firstname}} {{item.lastname}}</h2>
+  
+    </ion-item>
+
+
+  </ion-list>
+
+
+
+</ion-content>

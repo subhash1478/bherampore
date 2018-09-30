@@ -1,0 +1,117 @@
+<!--
+  Generated template for the CheckoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Checkout</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+   
+  <ion-list *ngIf="!cartEmpty">
+    <ion-item class="alignitmtotal">
+      <ion-row class="prcelst header-tp">
+        <ion-col col-6 text-left>Call Summary</ion-col>
+        <ion-col col-6 text-right (click)="editOrder()"><span class="eoclr">Edit Order</span></ion-col>
+      </ion-row>
+        <h2 class="h-one">{{shop.name}}</h2>
+      <ion-row class="prcelst" *ngFor="let item of checkoutList;">
+        <ion-col col-6 text-left>{{item.product_name}}</ion-col>
+        <ion-col col-3 text-center>x {{item.quantity}}</ion-col>
+        <ion-col col-3 text-right class="clrblac">{{item.quantity*item.price|currency:'INR'}}</ion-col>
+      </ion-row>
+ 
+      <ion-row class="prcelst subtotal">
+          <ion-col col-8 text-left>Subtotal</ion-col>
+          <ion-col col-4 text-right class="clrblac">{{sub_total|currency:'INR'}}</ion-col>
+      </ion-row>
+      <ion-row class="prcelst">
+          <ion-col col-8 text-left>Service fee</ion-col>
+          <ion-col col-4 text-right>₹0.00</ion-col>
+      </ion-row>
+      <!-- <ion-row class="prcelst">
+          <ion-col col-8 text-left>Taxes & Charges</ion-col>
+          <ion-col col-4 text-right>₹48.65</ion-col>
+      </ion-row> -->
+      <ion-row class="prcelst">
+          <ion-col col-8 text-left>Delivery chargers</ion-col>
+          <ion-col col-4 text-right>₹0.00</ion-col>
+      </ion-row>
+      
+      <!-- <ion-item class="alignitmtop">
+          <h3>Apply Coupon</h3>
+          <h4>3 Available</h4>
+          <button ion-button clear item-end  class="btnarw"><ion-icon name="arrow-forward"></ion-icon></button>
+      </ion-item> -->
+    
+      <ion-row class="prcelst totalprnt">
+          <ion-col col-8 text-left>Total</ion-col>
+          <ion-col col-4 text-right class="clrblac">{{sub_total|currency:'INR'}}</ion-col>
+      </ion-row>
+        
+    </ion-item>
+  </ion-list>
+  <ion-list radio-group class="smp-bx" *ngIf="!cartEmpty">
+      <ion-row class="prcelst header-tp">
+          <ion-col col-12 text-left>Choose Delivery Type</ion-col>
+      </ion-row>
+      <!-- <ion-item>
+          <ion-label>Delivery (in 60min)</ion-label>
+          <ion-radio value="delivery"></ion-radio>
+      </ion-item> -->
+      <ion-item>
+          <h4 class="h4head">Delivery Address</h4> 
+          <p class="adrsinfo" *ngFor="let item of address">
+            {{item.address}} {{item.locality}} {{item.city}}  {{item.landmark}} 
+          </p>
+          <span class="changebtn" (click)="changeAddres()">Change</span>
+      </ion-item>
+      <ion-item>
+          <ion-label>Pickup</ion-label>
+          <ion-radio value="pickup"></ion-radio>
+      </ion-item>
+      <ion-item>
+          <ion-input class="inputbx" placeholder="Order related instruction, if any.."></ion-input>
+      </ion-item>
+  </ion-list> 
+  <ion-list radio-group class="smp-bx"  [(ngModel)]="paymenttype" *ngIf="!cartEmpty">
+ 
+      <ion-row class="prcelst header-tp">
+          <ion-col col-12 text-left>Select Payment Mode</ion-col>
+      </ion-row>
+     
+      <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/razor.png">
+          </ion-thumbnail>
+          <ion-label>RazorPay</ion-label>
+          <ion-radio value="razor"></ion-radio>
+      </ion-item>
+      <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/cash-in-hand.png">
+          </ion-thumbnail>
+          <ion-label>Cash Payment</ion-label>
+          <ion-radio value="cashpayment"></ion-radio>
+      </ion-item>
+  </ion-list> 
+
+</ion-content>
+  <ion-footer *ngIf="!cartEmpty">
+    <button class="btngtn" ion-button large full no-margin (click)="payment()" >
+      Proceed to Pay <ion-icon name="arrow-forward" class="arrht"></ion-icon>
+    </button>
+  </ion-footer>
+
+  <ion-footer *ngIf="cartEmpty">
+        <button class="btngtn" ion-button large full no-margin (click)="shopnow()" >
+        Shop now<ion-icon name="arrow-forward" class="arrht"></ion-icon>
+        </button>
+      </ion-footer>

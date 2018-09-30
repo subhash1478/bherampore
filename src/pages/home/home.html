@@ -1,0 +1,74 @@
+<ion-header >
+    <ion-toolbar color="primary">
+      <button ion-button (click)="openMenu()" menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+</ion-navbar>
+<ion-buttons end>
+  <button (click)="PromotionModal()" ion-button icon-only>
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+<button (click)="goToSearch()" ion-button icon-only>
+    <ion-icon name="search"></ion-icon>
+  </button>
+</ion-buttons>
+
+<ion-buttons end>
+
+<!-- <button (click)="goToNotification()" ion-button icon-only>
+    <ion-icon ios="ios-notifications-outline" md="md-notifications-outline">
+{{notificationList}}
+
+    </ion-icon>
+  </button> -->
+  
+  <button ion-button icon-only (click)="goToNotification()">
+      <ion-badge *ngIf="notificationList" color="danger">{{ notificationList }}</ion-badge>
+      <ion-icon name="notifications"></ion-icon>
+    </button>
+</ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+ 
+<ion-content>
+     <div   class="slder-height animated fadeIn"  >
+        <ion-slides *ngIf="bannerone.length"  loop="true" autoplay="3000" pager  effect="fade" class="animated fadeIn">
+            <ion-slide  *ngFor="let i of bannerone" (click)="goToPost(i)">
+                <img [src]="i.image" />
+            </ion-slide>
+            
+          </ion-slides>
+        </div> 
+         
+
+
+<div  *ngFor="let item of banner" class="slder-height animated fadeIn" (click)="showPromoterCategory(item)">
+    <ion-slides loop="true" autoplay="1000" pager  effect="fade" class="animated fadeIn">
+        <ion-slide *ngFor="let i of item" >
+            <img [src]="i.image" />
+        </ion-slide>
+        
+      </ion-slides>
+    </div> 
+
+
+
+
+  <ion-grid class="cate-lst">
+    <ion-row wrap>
+      <ion-col class="animated fadeIn" col-4 *ngFor="let item of categoryList" (click)="goToPostPage(item)">
+        <img [src]="item.image"  />
+        <p>{{ item.title }}</p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

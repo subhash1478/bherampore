@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Image Gallery
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  
+    <ion-grid  >
+      <ion-row>
+        <ion-col col-6 col-md-4 col-xl-3 *ngFor="let item of promoterList" class="animated fadeIn">
+          <div (click)="openZoom(image)" class="image-container" [style.background-image]="'url('+item.image+')'"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+ 
+  
+</ion-content>

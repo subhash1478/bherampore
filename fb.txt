@@ -1,0 +1,57 @@
+
+      
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\putul dey\.android\debug.keystore" | "C:\Users\putul dey\Downloads\openssl-0.9.8k_X64\bin\openssl" sha1 -binary | "C:\Users\putul dey\Downloads\openssl-0.9.8k_X64\bin\openssl" base64
+      
+
+──
+── ────────────────────────────────────────────────────────────────────────────────────────────────── III ──────────
+──   :::::: S E T   F A C E B O O K   A P P I D   I N   A N D R O I D : :  :   :    :     :        :          :
+── ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+──
+
+
+ 
+
+     
+<string name="facebook_app_id">2270481933179280</string>
+<string name="fb_login_protocol_scheme">fb2270481933179280</string>
+
+
+ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID="2270481933179280" --variable APP_NAME="localshop"
+
+
+cordova plugin add cordova-plugin-facebook4 --save --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+
+44:09:BF:60:F0:5F:73:74:5E:AB:E3:94:21:38:6D:71:F5:AF:DE:CC
+keytool -exportcert -alias localshop -keystore localshop | openssl sha1 -binary | openssl base64
+
+RAm/YPBfc3Req+OUIThtcfWv3sw=
+
+──
+── ──────────────────────────────────────────────────────────────────────────────────────── II ──────────
+──   :::::: U B U N T U   S E T   H O M E   V A R I B A L E : :  :   :    :     :        :          :
+── ──────────────────────────────────────────────────────────────────────────────────────────────────
+──
+
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+
+export PATH=$PATH:/opt/gradle/gradle-3.4.1/bin
+
+
+
+
+──
+── ──────────────────────────────────────────────────────────────────────── I ──────────
+──   :::::: F B   H A S H   K E Y S T O R E : :  :   :    :     :        :          :
+── ──────────────────────────────────────────────────────────────────────────────────
+──
+
+
+keytool -list -printcert -jarfile android-debug.apk
+
+ 
+Copy the SHA1 value to your clip board
+like this CD:A1:EA:A3:5C:5C:68:FB:FA:0A:6B:E5:5A:72:64:DD:26:8D:44:84
+and open http://tomeko.net/online_tools/hex_to_base64.php to convert your SHA1 value to base64.

@@ -1,0 +1,182 @@
+page-addreview {
+  $base-color: rgb(84, 138, 158);
+  // Fullscreen centered image background
+  ion-content {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color:gray;
+    background: gray;
+  }
+  // Slider
+  .content-slider {
+    ion-slides,
+    .swiper-container {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .text-slider {
+    ion-slides,
+    .swiper-container {
+      height: 20vh;
+      width: auto;
+    }
+  }
+  .zoom .slide-zoom {
+    height: 100%;
+  }
+  // Content
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .logo {
+    width: 100%;
+    max-width: 19em;
+    height: auto;
+    margin: 0 auto;
+  }
+  ion-row {
+    align-items: center;
+    text-align: center;
+  }
+  ion-col {
+    padding: 0 20px;
+  }
+ 
+  // Input items
+  ion-label,
+  .input-has-focus {
+    color: gray !important;
+  }
+  ion-item {
+    border-radius: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-bottom: 5px !important;
+    background-color: transparent !important;
+  }
+  .margin-bottom {
+    margin-bottom: 15px !important;
+  }
+   ::-webkit-input-placeholder {
+    color: white !important;
+  }
+  .item-inner {
+    border-bottom: 2px solid white !important;
+    box-shadow: none !important;
+  }
+  //
+  
+  .goback-button {
+    font-weight: bold;
+    float: left;
+    ion-icon {
+      padding-right: 10px;
+      font-size: 2.2rem;
+    }
+  }
+  .slide-button {
+    margin-top: 4rem;
+    font-weight: bold;
+    ion-icon {
+      padding-left: 10px;
+      font-size: 2.2rem;
+    }
+  }
+  .position-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    right: 0;
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .star-icon[_ngcontent-c0] {
+      color: #ed7700;
+      font-size: 30px;
+      position: relative;
+  }
+  .star-icon[_ngcontent-c0]:before {
+    color: #ed7700;
+}
+.login-button.button-ios {
+  text-transform: none;
+  @include border-radius(40px);
+  background-color: #ed7700;
+  border: 0;
+  color: #fff;
+  font-size: 15px;
+  width: 100px;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 42px;
+}
+.header .bar-button-ios[icon-only] ion-icon {
+  font-size: 30px;
+}
+.item .label{
+  font-size: 15px;
+  font-weight: 400;
+}
+.text-input{
+  border: 0;
+  height: auto;
+  margin:0;
+  color: #425363;
+  font-family: $font-stack1;
+  width:100%;
+  background-color:transparent;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+}
+.text-input:focus {
+  outline: 0;
+}
+.text-input::-moz-placeholder {
+  color: #aaaaaa;
+  opacity: 1;
+}
+.text-input:-ms-input-placeholder {
+  color: #aaaaaa;
+}
+.text-input::-webkit-input-placeholder {
+  color: #aaaaaa;
+}
+.item{
+  background:transparent;
+  border-bottom:1px solid#bbbbbb;
+  padding-left: 0;
+  position: relative;
+  margin-top: 11px;
+}
+.item:after{
+  content: '';
+  background-color: #bbbbbb;
+  width: 1px;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.item:before{
+  content: '';
+  background-color: #bbbbbb;
+  width: 1px;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.list-ios > .item-block:first-child {
+   border-top:0;
+}
+
+
+}

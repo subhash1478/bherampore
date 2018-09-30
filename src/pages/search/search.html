@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="header">
+    <ion-navbar>
+      <ion-title>
+        Search
+      </ion-title>
+    </ion-navbar>
+
+  </ion-toolbar>
+  <ion-searchbar [(ngModel)]="q" [showCancelButton]="shouldShowCancel" (ionInput)="search($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+</ion-header>
+<ion-content padding>
+
+
+  <div class="msgtxt" *ngIf="textmessage" [innerHTML]="warmmessage"></div>
+  <ion-spinner [hidden]="spinner" name="ios"></ion-spinner>
+
+  <ion-list [virtualScroll]="postList">
+    <ion-item class="animated fadeIn"  *virtualItem="let item" (click)="PostdetailsPage(item._id)">
+  
+         <ion-thumbnail item-start>
+         <!-- <ion-img [alt]="item.images" [src]="item.images" [cache]="true"></ion-img> -->
+         <img [defaultImage]="defaultImage" [lazyLoad]="item.images" [offset]="offset">
+        </ion-thumbnail>
+       <h2>{{item.title}}   </h2>
+       <p >{{item.address}} </p>
+       <p class="rating-txt">  
+       {{item.rating}}
+         <rating [readonly]="true"
+       [(ngModel)]="item.rating" [max]="1" iconClass="star-icon" fullIcon="★" emptyIcon="☆" [titles]="['one', 'two', 'three', 'four', 'five']">
+     </rating>
+      reviews</p>
+     <ion-icon class="callIco" item-end  name="call"></ion-icon>
+     <ion-icon class="pinIco" item-end  name="pin"></ion-icon>
+  
+    </ion-item>
+  </ion-list>
+
+</ion-content>

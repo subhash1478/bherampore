@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agent</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="message-wrap">
+
+    <div *ngFor="let msg of msgList"
+         class="message"
+         [class.left]=" msg.remoteuserid === User._id "
+         [class.right]=" msg.userid === User._id ">
+      <!-- <img class="user-img" [src]="msg.userAvatar" alt="" > -->
+      <ion-spinner name="dots" *ngIf="msg.receiver_seen === 'yes'"></ion-spinner>
+      <div class="msg-detail">
+        <div class="msg-info">
+          <p *ngIf="msg.remoteuserid === User._id ">
+            {{remoteuser.firstname}}</p>
+
+            <p *ngIf="msg.userid === User._id ">
+              {{User.firstname}}</p>
+        </div>
+        <div class="msg-content">
+          <span class="triangle"></span>
+          <p class="line-breaker ">{{msg.chat}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
+  <div class="input-wrap">
+ 
+    <textarea #chat_input
+              placeholder="Type a message"
+              [(ngModel)]="editorMsg"
+              (keyup.enter)="sendMsg()"
+              (focusin)="onFocus()">
+    </textarea>
+    <button ion-button clear icon-only item-right (click)="sendMsg()">
+      <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+    </button>
+  </div>

@@ -1,0 +1,92 @@
+page-address {
+    .list-ios {
+        margin: -1px 0 0;
+    }
+    ion-item {
+        border-radius: 0 !important;
+        padding-left: 16px !important;
+        margin-bottom: 0 !important;
+        margin-bottom: 10px;
+        color: #aaaaaa !important;
+        background-color: transparent !important;
+      }
+      .item .label{
+        font-size: 15px;
+        font-weight: 400;
+      }
+      .item-inner {
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+      }
+      .btngtn{
+        text-transform: none;
+        background-color: #ed7700;
+        border: 0;
+        font-size: 16px;
+        font-weight: 600;
+        height: 48px;
+        @include border-radius(0);
+        font-family: $font-stack1;
+        text-transform: inherit;
+        @include box-shadow(none);
+        margin:0;
+     }
+      .mrt16{
+       margin-top: 20px;
+      }
+      .text-input{
+       border: 0;
+       height: auto;
+       margin:0;
+       color: #425363;
+       font-family: $font-stack1;
+       width:100%;
+       background-color:transparent;
+       text-align: left;
+       font-size: 15px;
+       font-weight: 400;
+     }
+     .text-input:focus {
+       outline: 0;
+     }
+     .text-input::-moz-placeholder {
+       color: #aaaaaa;
+       opacity: 1;
+     }
+     .text-input:-ms-input-placeholder {
+       color: #aaaaaa;
+     }
+     .text-input::-webkit-input-placeholder {
+       color: #aaaaaa;
+     }
+     .item{
+       background:transparent;
+       border-bottom:1px solid#bbbbbb;
+       padding-left: 0;
+       position: relative;
+     }
+     .item:after{
+       content: '';
+       background-color: #bbbbbb;
+       width: 1px;
+       height: 10px;
+       position: absolute;
+       bottom: 0;
+       right: 0;
+     }
+     .item:before{
+       content: '';
+       background-color: #bbbbbb;
+       width: 1px;
+       height: 10px;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+     }
+     .list-ios > .item-block:first-child {
+        border-top:0;
+    }
+    .list-md .item-input:last-child {
+        border-bottom: 1px solid #bbbbbb;
+    }
+}

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-navbar >
+      <ion-title>Feedback Form</ion-title>
+
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="animated fadeIn"> 
+  <ion-grid class="listing-details" no-padding>
+    <ion-row>
+      
+        <h1 class="heading-top">Contact Us</h1>
+
+
+       <section class="dtls-bx" >
+          <p class="details"><ion-icon ios="ios-pin" md="md-pin"></ion-icon>  CB 195, Street Number 195, Action Area I, Newtown, Kolkata, West Bengal 700156</p>
+          <p class="details"><ion-icon ios="ios-mail" md="md-mail"></ion-icon> souviktripathy@gmail.com </p>
+          <p class="details"><ion-icon ios="ios-call" md="md-call"></ion-icon> +91 8420215558</p>
+          <p class="details"><ion-icon ios="ios-call" md="md-call"></ion-icon> +91 8348310036</p>
+      </section>
+    </ion-row>
+</ion-grid>
+<h1 class="heading-top">Feedback Form</h1>
+
+  <ion-item>
+       <ion-label floating>Subject</ion-label>
+       <ion-input type="text"  [(ngModel)]="feed.subject" name="title"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>comment</ion-label>
+      <ion-textarea name="description" [(ngModel)]="feed.comment" ></ion-textarea>
+  </ion-item>
+  <button ion-button type="submit" block (click)="submit()" class="login-button mrt16">Send</button>
+
+  
+
+</ion-content>

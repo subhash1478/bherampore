@@ -1,0 +1,40 @@
+ <ion-header>
+  <ion-navbar>
+    <ion-title>Promoter Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <section class="housing-image animated fadeIn" *ngFor="let item of promoterList" >
+    <ion-slides  *ngIf="item.image && item.image.length>0" loop="true" autoplay="1000" pager  effect="fade" (click)="openGalley(item.promoter)">
+      <ion-slide  *ngFor="let itemval of item.image"
+      [ngStyle]="{'background' : 'url( '+ 'http://139.59.12.86:1337/images/Promoter/'+itemval.images+' )no-repeat','background-size':'cover'}" >
+      <section class="housing-banner">
+        <span  > {{item.promoter.title}}</span>
+      </section>
+    </ion-slide>
+  </ion-slides>
+  <ion-row class="btm-ftrbar" >
+      
+          <ion-col (click)="addReview(item)">
+           Rating {{item.rating}}
+            <ion-icon name="star"></ion-icon>
+
+            </ion-col>
+          
+    <ion-col (click)="addReview(item)">
+      <button ion-button icon-start clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>
+          {{item.comment}}  Comments</div>
+        </button>
+      </ion-col>
+      <ion-col (click)="share(item)">
+          <button ion-button icon-start clear small>
+            <ion-icon name="share"></ion-icon>
+            <div>
+               Share</div>
+            </button>
+          </ion-col>
+    </ion-row>
+  </section> 
+</ion-content>

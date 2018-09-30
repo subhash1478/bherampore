@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "977511232376",
+    "firebase_url": "https://bharampur-9142d.firebaseio.com",
+    "project_id": "bharampur-9142d",
+    "storage_bucket": "bharampur-9142d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977511232376:android:d47d32cc0bba343a",
+        "android_client_info": {
+          "package_name": "com.baharampur.one.touch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977511232376-inlef6u9b17m085mfel48vsk4i93vkve.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "977511232376-inlef6u9b17m085mfel48vsk4i93vkve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaJHOy6CEDQC5nHPNwsfS2kkD6tqXe_mU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

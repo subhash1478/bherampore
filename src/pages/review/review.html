@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="header">
+    <ion-navbar>
+      <ion-title>
+        Review
+      </ion-title>
+    </ion-navbar>
+    <ion-buttons end>
+      <button (click)="goToReviewpage()" ion-button icon-only>
+          <ion-icon ios="ios-add" md="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item *ngFor="let item of reviewlist async" class="animated fadeIn">
+      <ion-avatar item-left>
+        <img src="http://139.59.12.86:3001/api/img/?format=jpg&width=200&height=200&image=public/image/user/{{item.userid.profile_image}}">
+      </ion-avatar>
+    <h2>{{item.userid.firstname}} {{item.userid.lastname}}</h2>
+    <p>{{item.comment}}</p>
+    <p>rating 
+      <rating         [readonly]="true"
+      [(ngModel)]="item.rating" [max]="5" iconClass="star-icon" fullIcon="★" emptyIcon="☆" [titles]="['one', 'two', 'three', 'four', 'five']">
+      </rating></p>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-content padding>
+  <ion-header>
+    <ion-navbar hideBackButton *navbar>
+    </ion-navbar>
+  </ion-header>
+  <img class="logo"  src="assets/imgs/logo.png" />
+  <div padding>
+    <ion-item *ngIf="!login_page">
+        <ion-label floating>First name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.firstname"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!login_page">
+        <ion-label floating>Last name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <button *ngIf="login_page" ion-button block outline (click)="login()"
+     color="light" class="login-button mrt10">Login</button>
+
+    <button *ngIf="!login_page" ion-button block outline  (click)="register()" color="light" class="login-button mrt10">Register</button>
+    <div text-center><span class="frgt-txt" (click)="forgetPassword()">Forget Password ?</span></div>
+  </div>
+  <div class="strike">
+    <span>OR</span>
+  </div>
+  <div padding>
+  <button ion-button block clear (click)="fbook()" color="light" class="login-button"><ion-icon name="logo-facebook"></ion-icon> Login with Facebook</button>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <div *ngIf="login_page" (click)="gotoregister()">
+      <span>Don't have an account? <strong>Sign up here</strong>.</span>
+    </div>
+    <div *ngIf="!login_page" (click)="gotologin()">
+      <span>Already have an account? <strong>Login here</strong>.</span>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,164 @@
+page-contact {
+    .list-ios {
+        margin: -1px 0 0;
+    }
+    ion-item {
+        border-radius: 0 !important;
+        padding-left: 0 !important;
+        margin-bottom: 0 !important;
+        margin-bottom: 10px;
+        color: #aaaaaa !important;
+        background-color: transparent !important;
+      }
+      .item .label{
+        font-size: 15px;
+        font-weight: 400;
+      }
+      .item-inner {
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+      }
+      .login-button {
+        text-transform: none;
+        @include border-radius(40px);
+        background-color: #ed7700;
+        border: 0;
+      }
+      .mrt16{
+       margin-top: 20px;
+      }
+      .text-input{
+       border: 0;
+       height: auto;
+       margin:0;
+       color: #425363;
+       font-family: $font-stack1;
+       width:100%;
+       background-color:transparent;
+       text-align: left;
+       font-size: 15px;
+       font-weight: 400;
+     }
+     .text-input:focus {
+       outline: 0;
+     }
+     .text-input::-moz-placeholder {
+       color: #aaaaaa;
+       opacity: 1;
+     }
+     .text-input:-ms-input-placeholder {
+       color: #aaaaaa;
+     }
+     .text-input::-webkit-input-placeholder {
+       color: #aaaaaa;
+     }
+     .item{
+       background:transparent;
+       border-bottom:1px solid#bbbbbb;
+       padding-left: 0;
+       position: relative;
+       margin-top: 11px;
+     }
+     .item:after{
+       content: '';
+       background-color: #bbbbbb;
+       width: 1px;
+       height: 10px;
+       position: absolute;
+       bottom: 0;
+       right: 0;
+     }
+     .item:before{
+       content: '';
+       background-color: #bbbbbb;
+       width: 1px;
+       height: 10px;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+     }
+     .list-ios > .item-block:first-child {
+        border-top:0;
+    }
+    h4.headingB{
+        font-family: $font-stack1;
+        font-size: 16px; 
+        margin-top: 16px !important; 
+        color: #425363;
+    }
+    .logoutbtn{
+        height: 30px;
+        width: 65px;
+        @include border-radius(5px);
+        border: 1px solid #ed7700;
+        font-weight: 400;
+        color: #ed7700;
+        font-family: $font-stack1;
+        background: transparent;
+        text-transform: inherit;
+        @include box-shadow(none);
+        margin: 0;
+    }
+    .logoutbtn:hover{
+        background: #ed7700;
+        border-color: #ed7700;
+        color: #fff;
+    }
+    .btnsave {
+        height: 30px;
+        width: 65px;
+        @include border-radius(5px);
+        border: 1px solid #fff;
+        font-weight: 400;
+        color: #ed7700;
+        font-family: $font-stack1;
+        background: transparent;
+        text-transform: inherit;
+        @include box-shadow(none);
+        font-size: 13px;
+    }
+    .btnsave:hover{
+        background: #00579c;
+        border-color: #00579c;
+        color: #fff;
+    }
+    .img-bgt{
+        background:url('../assets/imgs/profilebg.png') top center no-repeat;
+        background-size: cover;
+        height: 100px;
+    }
+    .profile-imgouter{
+         text-align: center;
+        .p-img-outer{
+            height: 92px;
+            width: 92px;
+            @include border-radius(50%);
+            margin: auto;
+            border: 2px solid #fff;
+            padding: 5px;
+            position: relative;
+            margin-top: -46px;
+            img{
+                height: 80px;
+                width: 80px;
+                @include border-radius(50%);  
+                background-color: #fff; 
+            }
+        }
+        .username{
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .owner{
+            font-size: 13px;
+            color: #777;
+        }
+        ion-icon{
+            color: #ed7700;
+            font-size: 14px;
+        }
+    }
+    .button-clear-md, .button-clear-ios{ color: #ed7700;}
+    
+
+}

@@ -1,0 +1,85 @@
+page-notification {
+    .item{
+        margin-bottom: 6px;
+        background-color: #fff;
+        @include box-shadow(0px 0px 10px 0px rgba(171,171,171,0.2));
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .item-md, .item-ios{
+        padding-left: 0;
+    }
+    .item-md.item-block .item-inner, 
+    .list-ios .item-block .item-inner{
+        padding-right: 0;
+        border-bottom: 0;
+    }
+    .list-md > .item-block:last-child .item-inner, 
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0;
+    }
+    .list-ios > .item-block:last-child, 
+    .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom: 0;
+    }
+    .list-md > .item-block h2,
+    .list-ios > .item-block h2{
+        color: #252525;
+        font-family: $font-stack1;
+        font-weight: 400;
+        display: inline-block;
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .btnVD.item-button{
+        border: 1px solid #cecece;
+        font-weight: 400;
+        color: #868686;
+        font-family: $font-stack1;
+        background: #fff;
+        float: right;
+        text-transform: inherit;
+        @include box-shadow(none);
+        margin: 0;
+    }
+    .btnVD.item-button:hover{
+        background: #ed7700;
+        border-color: #ed7700;
+        color: #fff;
+    }
+
+    .item-ios ion-avatar[item-start] {
+        margin: 8px 0 8px 16px;
+        @include border-radius(5px);
+    }
+    .item-ios ion-avatar[item-start] img{
+        @include border-radius(5px);
+    }
+    .list-ios > .item-block, .list-ios > .item-block span,
+    .list-ios > .item-block p{font-size: 13px;}
+    .alstdul li{
+        font-size: 12px;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: 0;
+    }
+    .msgtxt{
+        margin: 8px 0 8px 8px;  
+        color: #777;
+    }
+
+    @media only screen and (min-width: 320px) {
+        .item-block .item-inner .label{
+            margin: 8px 16px;
+        }
+        .btnVD.item-button{
+            height: 30px;
+            width: 65px;
+            @include border-radius(5px);
+        }
+        .btnVD.item-button span{
+            font-size:13px;
+        }
+        
+    }
+}

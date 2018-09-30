@@ -1,0 +1,211 @@
+page-promoter-details {
+    $black-overlay: rgba(0,0,0,.5);
+    $text-color: #666;
+    $banner-text-color: white;
+    $content-color: whitesmoke;
+    $detail-background: rgba(236,236,236,.8);
+    .swiper-pagination-bullet-active {
+        background: #ed7700;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom:60px;
+     }
+    .banner {
+        color: $banner-text-color;
+        background: $black-overlay;
+    
+        .details {
+            font-size: 1.5rem;
+        }
+    }
+   /* Header */
+   .toolbar-background {
+       border-color: transparent;
+       background: $black-overlay;
+   }
+
+   .bar-button,
+   .toolbar-title {
+       color: $banner-text-color;
+   }
+
+   /* Image */
+   .housing-image{
+       background-size: cover;
+       height: 50vh;
+       position: relative;
+   }
+
+   .housing-banner {
+       color: $banner-text-color;
+       background: $black-overlay;
+       height: 10vh;
+       width: 100vw;
+       position: absolute;
+       bottom: -1px;
+       padding-left: 10px;
+       padding-right: 10px;
+       .housing-title {
+           display: block;
+           font-size: 1.2rem;
+       }
+
+       .price {
+           font-size: 17px;
+           line-height: 10vh;
+           display: block;
+           text-overflow: ellipsis;
+           white-space: nowrap;
+           overflow: hidden;
+       }
+   }
+   /* Content */
+   .content {
+       background: $content-color;
+   }
+
+   .scroll-content {
+       padding-top: 0 !important;
+   }
+
+   .main-content {
+       color: $text-color;
+
+   }
+   .listing-details ion-col {
+       padding: 1rem;
+       margin: 0.45rem;
+       background: $detail-background;
+   }
+
+   .main-features {
+       padding: 0;
+       ion-icon {
+           font-size: 22px !important;
+           vertical-align: middle;
+           color: #fff;
+       }
+      
+       .col{
+            text-align: center;
+            padding: 20px 8px;
+            background-color: #ececec;
+        }
+        .col:nth-child(1){
+            background-color: #f53d3d;
+        }
+        .col:nth-child(2){
+            background-color: #2ec95c;
+         }
+         .col:nth-child(3){
+            background-color: #ed7700;
+         }
+         .col:nth-child(4){
+
+            background-color: #9c27b0;;
+         }
+        .e-name{
+            color: #fff;
+            font-family: $font-stack1;
+            font-size: 14px;
+            margin-top: 6px;
+            display: block;
+            text-transform: capitalize;
+        }
+   }
+
+   .item-block {
+       text-align: center;
+       display: block;
+   }
+   ion-footer{
+       height: 50px;
+   }
+   .dtls-bx{
+       h4{
+        font-family: $font-stack1;
+        font-size: 15px; 
+        margin-bottom: 6px; 
+        color: #425363;
+       }
+       p{
+        margin-top: 5px;
+       }
+   }
+   .padd50{
+     padding-bottom: 50px;
+   }
+   .btngtn{
+    text-transform: none;
+    background-color: #ed7700;
+    border: 0;
+    font-size: 16px;
+    height: 50px;
+   }
+   .prdtTitle .item-block{
+      background: url(../assets/imgs/dise-ico.png) no-repeat 15px 16px;
+      text-align: left;
+      background-size: 16px;
+      background-color: #ebebeb;
+   }
+   .prdtTitle .item-block .label{
+       margin-left: 22px;
+       font-family: $font-stack1;
+        font-size: 15px; 
+        color: #252525;
+   }
+  
+    .btm-ftrbar{
+        border-top:1px solid #e5e5e5;
+        border-bottom:1px solid #e5e5e5;
+        background-color: #f5f5f5;
+    }
+    .btm-ftrbar .col{
+        border-right:1px solid #e5e5e5;
+        text-align: center;
+        padding:0;
+       font-size: 14px;
+       color:#6c6c6c;
+    }
+    .btm-ftrbar .col:last-child{
+        border-right:0;
+    }
+    .btm-ftrbar .col button{
+        font-size: 13px;
+        color:#8c8c8c;
+        text-transform: none;
+        font-family: $font-stack1;
+    }
+    .card-content p.like-content{
+        font-family: $font-stack1;
+        font-size: 12px;
+        color:#a5a5a5;
+    }
+    .card-content p.like-content .icon{
+        color:#ed7700;
+    }
+
+    .card{
+        border:1px solid #e5e5e5;
+        border-bottom:3px solid #e5e5e5;
+        @include box-shadow(none);
+    }
+    .pd-top-header{
+        padding: 12px 16px;
+        background-color: #2ec95c;
+    }
+    .pd-top-header h2{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .pd-top-header p{
+        color: #fff;
+        font-size: 14px;
+    }
+    .card-content p{
+        font-size: 15px;
+        color: #555;
+    }
+
+}

@@ -1,0 +1,207 @@
+page-cart {
+    .content-ios, .content-md{
+        background-color: #f1f6f8;
+    }
+    .list{
+        background-color: #fff;
+        @include box-shadow(0px 0px 10px 0px rgba(171,171,171,0.2));
+        margin: 8px 8px;
+        @include border-radius(5px);
+        overflow: hidden;
+    }
+    .header-tp{
+       background-color: #f1f6f8;
+    }
+    .eoclr{
+        color: #ed7700;
+    }
+    .h-one{
+        color: #252525;
+        font-family: $font-stack1;
+        font-weight: 600;
+        display:block;
+        font-size: 16px;
+        padding: 12px;
+        border-bottom:1px solid #f1f6f8;
+    }
+    .prcelst .col.clrblac{
+        color: #252525;  
+    }
+    .item-md, .item-ios{
+        padding-left: 0;
+    }
+    .item-md.item-block .item-inner, 
+    .list-ios .item-block .item-inner{
+        padding-right: 0;
+        border-bottom: 0;
+    }
+    .list-md > .item-block:last-child .item-inner, 
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0;
+    }
+    .list-ios > .item-block:last-child, 
+    .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom: 0;
+    }
+    .list-md > .item-block h2,
+    .list-ios > .item-block h2{
+        color: #252525;
+        font-family: $font-stack1;
+        font-weight: 600;
+        display:block;
+        font-size: 16px;
+    }
+    .list-md > .item-block p,
+    .list-ios > .item-block p{
+      font-size: 14px;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: 0;
+    }
+    .prcelst .col{
+        font-weight: 400;
+        color: #868686;
+        font-size: 15px;
+        padding: 12px 12px;
+        border-bottom:1px solid #f1f6f8;
+    }
+    .totalprnt .col{
+        color: #252525;
+        font-weight: 600;
+        font-size: 16px;
+        border-bottom: 0;
+    }
+   .subtotal{
+      border-top:2px solid #f1f6f8; 
+   }
+   .ion-ios-alert-outline{vertical-align: middle;}
+   .alignitmtop{
+       padding: 12px;
+       border-bottom:1px solid #f1f6f8;
+   }
+   .alignitmtop h3{
+       font-weight: 600;
+       font-size: 15px;
+       color: #ed7700;
+       margin-bottom: 5px;
+   }
+   .alignitmtop h4{
+        font-weight: 600;
+        font-size: 14px;
+        color: #2ec95c;
+    }
+    .btnarw.item-button{
+        color: #ed7700;
+        @include box-shadow(none);
+        font-size: 17px;
+        margin: 0;
+    }
+    .header-tp.prcelst .col{
+        font-weight: 500;
+    }
+
+    .smp-bx .item-ios ion-thumbnail[item-start] {
+        margin: 8px 0 8px 8px;
+        @include border-radius(5px);
+        min-width: 60px;
+        min-height: 40px;
+        align-items: center;
+        display: flex;
+        // justify-content: center;
+    }
+    .smp-bx .item-ios ion-thumbnail[item-start] img{
+        width: 40px;
+        height: auto;
+    }
+    .smp-bx .item-radio-checked.item-ios ion-label {
+        color: #252525;
+        font-size: 15px;
+    }
+    .smp-bx .radio-ios .radio-checked .radio-inner{
+        border-color: #ed7700; 
+    }
+    .smp-bx .item-ios{
+       padding:4px;
+       border-bottom:1px solid #f1f6f8;
+    }
+    .btngtn{
+        text-transform: none;
+        background-color: #ed7700;
+        border: 0;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: $font-stack1;
+        height: 48px;
+     }
+     .inputbx{
+         font-size: 14px;
+         padding: 0 8px;
+     }
+     .arrht{
+         margin-left: 10px;
+         font-size: 14px;
+     }
+     .h4head{
+         font-weight: 600;
+         margin-bottom: 5px;
+     }
+     .adrsinfo{
+        color: #252525;
+     }
+     .changebtn{
+         display: inline-block;
+         color: #ed7700;
+         font-size: 13px;
+         margin-top: 10px;
+     }
+ 
+
+    @media only screen and (min-width: 320px) {
+        .item-block .item-inner .label{
+            margin: 0;
+            white-space: inherit;
+            font-size: 15px;
+            color: #868686;
+            font-weight: 400;
+        }
+        .smp-bx .item-block .item-inner .label{
+            margin: 8px;
+            white-space: inherit;
+        }
+        .list-ios > .item-block .btnVD.item-button{
+            height: 30px;
+            width: 65px;
+            font-size:13px !important;
+            @include border-radius(5px);
+        }
+        
+    }
+    .addbtn{
+        border:1px solid #ed7700;
+        @include border-radius(5px);
+        overflow: hidden;
+        display: inline-block;
+    }
+    .addbtn .icon{
+        float: left;
+        height: 30px;
+        width: 20px;
+        font-size: 16px;
+        color: #ed7700;
+        text-align: center;
+        line-height: 30px;
+        background-color: #f1f6f8;
+    }
+    .crntcount{
+        float: left;
+        height: 30px;
+        width: 40px;
+        border-left:1px solid #ed7700;
+        border-right:1px solid #ed7700;
+        font-size: 15px;
+        color: #ed7700;
+        line-height: 30px;
+        text-align: center;
+    }
+
+}

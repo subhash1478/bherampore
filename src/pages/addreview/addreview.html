@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar color="header">
+      <ion-navbar>
+        <ion-title>
+          Add review
+        </ion-title>
+
+      </ion-navbar>
+      <ion-buttons end>
+        <button (click)="dismiss()" ion-button icon-only class="btnclse">
+            <ion-icon ios="ios-close" md="md-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-slides #slider class="content-slider" direction="vertical" >
+    <ion-slide class="swiper-no-swiping" class="animated flip" >
+      <div padding >
+        <ion-row>
+          <ion-col >
+
+            <rating  [(ngModel)]="reviewdata.rating" [max]="5" iconClass="star-icon" fullIcon="★" emptyIcon="☆" [titles]="['one', 'two', 'three', 'four', 'five']">
+            </rating>
+            <button ion-button round color="light" class="login-button" (click)="goToLogin()" class="login-button">Rate</button>
+          </ion-col>
+
+ 
+        </ion-row>
+      </div>
+    </ion-slide>
+    <ion-slide class="zoom swiper-no-swiping">
+      <ion-slides #innerSlider class="content-slider">
+        <ion-slide class="swiper-no-swiping">
+          <div style="padding: 20% 16px 16px 16px">
+            <ion-item>
+              <ion-label floating>Comment</ion-label>
+              <ion-textarea [(ngModel)]="reviewdata.comment"></ion-textarea>
+            </ion-item>
+             <button *ngIf="!update" ion-button block round (click)="updateReview()" color="light" class="login-button">Update</button>
+            <button  *ngIf="update" ion-button block round (click)="submit()" color="light" class="login-button">Submit</button>
+          </div>
+        </ion-slide>
+
+      </ion-slides>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

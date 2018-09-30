@@ -1,0 +1,93 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>
+      {{category.title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content fullscreen elestic-header>
+  <section class="housing-image animated fadeIn">
+          <ion-slides  *ngIf="imagedetails && imagedetails.length" loop="true" autoplay="1000" pager  effect="fade">
+            <ion-slide *ngFor="let item of imagedetails" [ngStyle]="{'background' : 'url(' + item.image + ')no-repeat','background-size':'cover'}">
+              <section class="housing-banner">
+                 <span class="price"> {{postdetails.title}}</span>
+              </section>
+            </ion-slide>
+          </ion-slides>
+  </section>
+  <section class="main-content animated fadeIn">
+    <ion-grid class="main-features">
+      <ion-row>
+        <ion-col text-center col-3>
+            <a  href="tel:{{postdetails.phone}}" color="secondary"  >    
+              <ion-icon name="call"></ion-icon>
+              <span class="e-name">call</span>
+        </a>
+        </ion-col>
+        <ion-col text-center  col-3 (click)="goToMap(postdetails)">
+          <ion-icon name="pin"></ion-icon>
+          <span class="e-name">location</span>
+        </ion-col>
+        <ion-col text-center col-3 (click)="goToPage('ReviewPage')">
+          <ion-icon name="star"></ion-icon>
+          <span class="e-name">rating</span>
+        </ion-col>
+        <ion-col text-center  col-3 (click)="openChat(postdetails)">
+          <ion-icon name="mail"></ion-icon>
+          <span class="e-name">chat</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="listing-details" no-padding>
+      <ion-row *ngIf="postdetails.description">
+        <section padding class="dtls-bx">
+           <h4 class="heading">Description :</h4>
+           <p class="details" [innerHtml]="postdetails.description"> </p>
+      </section>
+     </ion-row>
+<!-- product category -->
+     <ion-list  class="prdtTitle">
+        <ion-item *ngFor="let item of productCategoryList" (click)="showProduct(item)">
+            <ion-label>{{item.title}}</ion-label>
+         </ion-item>
+    </ion-list> 
+  <!-- product category -->
+      <ion-row *ngIf="postdetails.address">
+         <section padding class="dtls-bx">
+            <h4 class="heading">Address :</h4>
+            <p class="details"> {{postdetails.address}}</p>
+       </section>
+      </ion-row>
+      <ion-row *ngIf="postdetails.timing>0">
+          <section padding class="dtls-bx">
+              <h4 class="heading">Timing :</h4>
+              <p class="details" *ngFor="let item of postdetails.timing"> {{item}}</p>
+         </section>
+        </ion-row>
+        <ion-row *ngIf="postdetails.phone">
+        <section padding class="dtls-bx">
+            <h4 class="heading">Phone :</h4>
+            <p class="details"> {{postdetails.phone}}</p>
+       </section>
+      </ion-row>
+      <ion-row *ngIf="postdetails.rating">
+        <section padding class="dtls-bx">
+            <h4 class="heading">Rating :</h4>
+            <p class="details"> {{postdetails.rating}}</p>
+       </section>
+      </ion-row>
+      <ion-row *ngIf="postdetails.website">
+          <section padding class="dtls-bx">
+              <h4 class="heading">Website :</h4>
+              <p class="details"> {{postdetails.website}}</p>
+         </section>
+        </ion-row>
+    </ion-grid>
+    <div class="padd50"></div>
+  </section>
+</ion-content>
+<ion-footer>
+  <a class="btngtn" href="tel:{{postdetails.phone}}"  ion-button large full no-margin >
+    Get in touch now
+  </a>
+</ion-footer>

@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-navbar >
+      <ion-title>User Settings</ion-title>
+ 
+    </ion-navbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content  class="animated fadeIn" >
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    
+  <div class="profile-imgouter" >
+      <div class="img-bgt"></div>
+      <div (click)="updateProfileImage()" class="p-img-outer">
+        <img class="animated flip"  *ngIf="userdata.profile_image!=null" [src]="userdata.profile_image">
+
+        
+        <img [defaultImage]="defaultImage" [lazyLoad]="userdata.profile_image" [offset]="offset">
+
+      </div>
+      <p class="username">{{userdata.firstname}}  {{userdata.lastname}}</p>
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-icon name="star-outline"></ion-icon>
+      <p class="owner">Owner</p>
+<button   (click)="changePassword()" ion-button clear>    Change Password
+</button>
+</div>
+    <div padding>
+  <ion-list no-border>
+    
+    <h4 class="headingB">General</h4>
+    <ion-item>
+
+             <ion-label fixed>   <ion-icon name="call"></ion-icon> Phone</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="userdata.phone"></ion-input>
+     </ion-item>
+    <ion-item>
+
+        <ion-label fixed>   <ion-icon name="mail"></ion-icon> Email</ion-label>
+       <ion-input type="text" value="" [(ngModel)]="userdata.email"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed>   <ion-icon name="ios-stats-outline"></ion-icon> Zip</ion-label>
+     <ion-input type="text" value="" [(ngModel)]="userdata.zip"></ion-input>
+
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>   <ion-icon name="school"></ion-icon> About</ion-label>
+     <ion-textarea [(ngModel)]="userdata.about"></ion-textarea>
+
+
+
+    </ion-item>
+    <ion-item>
+      <p>
+          <ion-icon name="share"></ion-icon>
+
+        Joined</p><p   item-end>{{userdata.createdAt|date}}</p>
+    </ion-item>
+  </ion-list>
+ 
+
+  
+  
+
+  <button icon="people" ion-button full round  (click)="saveProfileEdit()" class="login-button mrt16">
+    Save
+  </button>
+
+ 
+
+</div>
+
+</ion-content>

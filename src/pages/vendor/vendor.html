@@ -1,0 +1,38 @@
+<ion-header >
+    <ion-toolbar color="header">
+
+  <ion-navbar>
+    <ion-title>Vendor</ion-title>
+</ion-navbar>
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let item of vendorList" (click)="goToProfile(item)">
+        <ion-thumbnail item-left class="item-ribbon">
+          <span class="ribbon {{ item.class }}">
+            <span>Verifed</span>
+          </span>
+          <img src="https://cdn2.iconfinder.com/data/icons/office-icons/256/Office_Man_Office_Worker-128.png">
+        </ion-thumbnail>
+        <div>
+            <p >{{ item.firstname }} {{item.lastname}}</p>
+            <p >{{ item.shopname }} </p>
+            <p >{{ item.city }}</p>
+            <p >{{ item.address }}</p>
+            <div class="ico-all">
+              <ion-icon name="mail" color="primary" item-start></ion-icon>
+              <ion-icon name="call" color="danger" item-start></ion-icon>
+              <ion-icon name="logo-whatsapp" color="secondary" item-start></ion-icon>
+            </div>
+          </div>
+      </ion-item>
+
+
+    </ion-list>
+
+  </ion-content>

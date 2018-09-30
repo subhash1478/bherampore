@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar >
+      <ion-navbar>
+        <ion-title>
+          Enter phone
+        </ion-title>
+      </ion-navbar>
+      <ion-buttons end>
+        <button (click)="dismiss()" ion-button icon-only class="btnclse">
+          <ion-icon ios="ios-close" md="md-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header> 
+  <ion-content padding>
+    <ion-list *ngIf="showotp">
+      <ion-item class=" animated fadeIn" >
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="number"  [(ngModel)]="phone" name="phone"></ion-input>
+        <button ion-button clear item-right (click)="clear()">
+          <ion-icon ios="ios-close" md="md-close-circle"></ion-icon>
+        </button>
+      </ion-item>
+      <button ion-button block clear  (click)="sendOTP()"> Send
+      </button>
+    </ion-list>
+
+    <ion-list *ngIf="!showotp">
+        <ion-item class=" animated fadeIn" >
+          <ion-label floating>OTP</ion-label>
+          <ion-input type="number"  [(ngModel)]="otp" name="otp"></ion-input>
+          <button ion-button clear item-right (click)="clear()">
+            <ion-icon ios="ios-close" md="md-close-circle"></ion-icon>
+          </button>
+        </ion-item>
+        <button ion-button block clear  (click)="verifyotp()"> verify
+        </button>
+      </ion-list>
+  
+
+  </ion-content> 
