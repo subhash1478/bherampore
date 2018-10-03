@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ServicesProvider } from '../../providers/services/services'
+import { UtilityProvider } from '../../providers/utility/utility'
 /**
  * Generated class for the MyshopPage page.
  *
@@ -14,12 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'myshop.html',
 })
 export class MyshopPage {
+  prodcuctList: any[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public utility: UtilityProvider, public _services: ServicesProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyshopPage');
+    let result=[]
+    this._services.getShopProduct().subscribe((Response) => {
+      result= Response.response.data;
+      console.log('====================================')
+      console.log(result)
+      console.log('====================================')
+    
+      result.sort((a, b) => a.title.localeCompare(b.title))
+
+      this.prodcuctList=result
+      
+    })
+
+    
   }
 
 }

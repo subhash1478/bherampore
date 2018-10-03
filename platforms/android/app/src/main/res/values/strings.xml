@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Baharampur one touch</string>
+    <string name="launcher_name">@string/app_name</string>
+    <string name="activity_name">@string/launcher_name</string>
+    <string name="fb_app_id">2270481933179280</string>
+    <string name="fb_app_name">localshop</string>
+    <string name="accountkit_token">492d0974d764ba29ee6eb1f2ae692184</string>
+</resources>

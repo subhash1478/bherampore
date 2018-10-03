@@ -1,0 +1,92 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/razorpay/razorpay-cordova.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/razorpay/razorpay-cordova.git",
+        "spec": "git+https://github.com/razorpay/razorpay-cordova.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:razorpay/razorpay-cordova.git",
+          "sshUrl": "git+ssh://git@github.com/razorpay/razorpay-cordova.git",
+          "httpsUrl": "git+https://github.com/razorpay/razorpay-cordova.git",
+          "gitUrl": "git://github.com/razorpay/razorpay-cordova.git",
+          "shortcut": "github:razorpay/razorpay-cordova",
+          "directUrl": "https://raw.githubusercontent.com/razorpay/razorpay-cordova/master/package.json"
+        }
+      },
+      "/opt/workspace/project/brahmapur"
+    ]
+  ],
+  "_from": "git+https://github.com/razorpay/razorpay-cordova.git",
+  "_id": "com.razorpay.cordova@1.3.12",
+  "_inCache": true,
+  "_location": "/com.razorpay.cordova",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/razorpay/razorpay-cordova.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/razorpay/razorpay-cordova.git",
+    "spec": "git+https://github.com/razorpay/razorpay-cordova.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:razorpay/razorpay-cordova.git",
+      "sshUrl": "git+ssh://git@github.com/razorpay/razorpay-cordova.git",
+      "httpsUrl": "git+https://github.com/razorpay/razorpay-cordova.git",
+      "gitUrl": "git://github.com/razorpay/razorpay-cordova.git",
+      "shortcut": "github:razorpay/razorpay-cordova",
+      "directUrl": "https://raw.githubusercontent.com/razorpay/razorpay-cordova/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/razorpay/razorpay-cordova.git#88db427ac25bcfe93bf8899bfc7fade239dbfa8f",
+  "_shasum": "b81a8c2ac790591a3cc12bb426f5a81c7e4b1e4b",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/razorpay/razorpay-cordova.git",
+  "_where": "/opt/workspace/project/brahmapur",
+  "author": {
+    "name": "Razorpay Developers",
+    "email": "developers@razorpay.com",
+    "url": "https://razorpay.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/razorpay/razorpay-cordova/issues"
+  },
+  "dependencies": {},
+  "description": "Cordova/Phonegap bindings for Razorpay's Mobile SDKs",
+  "devDependencies": {},
+  "gitHead": "88db427ac25bcfe93bf8899bfc7fade239dbfa8f",
+  "homepage": "https://github.com/razorpay/razorpay-cordova#readme",
+  "keywords": [
+    "razorpay",
+    "ecosystem:cordova",
+    "cordova",
+    "phonegap",
+    "ionic",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-browser"
+  ],
+  "license": "ISC",
+  "main": "Readme.md",
+  "name": "com.razorpay.cordova",
+  "optionalDependencies": {},
+  "readme": "# Cordova/Phonegap bindings for Razorpay's Mobile SDKs\n\nOfficial Cordova/Phonegap plugin for integrating Razorpay's checkout.\n\n## Supported platforms\n\n- Android\n- iOS\n- Browser\n\nYou can check out the sample apps for cordova, ionic1 & ionic2 in https://github.com/razorpay/razorpay-cordova-sample-app\n\n## Usage:\n\nInstall the plugin\n\n**Note**: For Windows users, please run this on Git Bash instead of Command Prompt. You can download Git for Windows [here](https://github.com/git-for-windows/git/releases/latest).\n\n```bash\ncd your-project-folder\ncordova platform add android      # optional\ncordova platform add ios          # optional\ncordova platform add browser      # optional\ncordova plugin add com.razorpay.cordova --save\n\n```\n\n**Note**: This release is meant for Xcode 9.3 and above as it uses a framework compiled in Swift 4.1.This will not work in Xcode 9.2 as you will get a \"dlyd error : framework not found error\".In case you are using an older version of Xcode and need Swift 3.1 visit the following link and download the respective framework.Also make sure that you set Always Embed Swift Standard Libraries of your main target to yes.\n\nhttps://razorpay.com/docs/ios/\n\n**Note**: This release contains a module map embedded in the framework which by default considers that your Xcode is named Xcode.app.If your Xcode is named differently please copy the script added in the scripts/ , paste it and run it in the folder containing the razorpay framework.\n\n**Note**: The iOS framework is shipped with simulator architectures , you have to remove them before you archive, just google  stripping simulator architectures and follow the steps.Also remember to enable bitcode on both your iOS project as well as the RazorpayCheckout project.\n\nFor eg:\n\nif the path of the razorpay framework is \n\n/razorpay-cordova/src/ios/Razorpay.framework\n\npaste the script in /razorpay-cordova/src/ios/\n\nand run the scipt , it will perform the required changes to the module map in the framework , you can then copy it and use it like before.\n\n(or, `phonegap plugin add com.razorpay.cordova --save`)\n\n## Integration code\n\n### Orders API Flow\n\nWith the advent of `auto-capture` using [Order API](https://docs.razorpay.com/v1/page/orders), the integration needs to change a little ([only if you are using this flow](https://docs.razorpay.com/v1/page/orders#auto-capturing-payment)). The only change is that the callbacks have to be added as events. Here is a code sample:\n\n```js\nvar options = {\n  description: 'Credits towards consultation',\n  image: 'https://i.imgur.com/3g7nmJC.png',\n  currency: 'INR',\n  key: 'rzp_test_1DP5mmOlF5G5ag',\n  order_id: 'order_7HtFNLS98dSj8x'\n  amount: '5000',\n  name: 'foo',\n  prefill: {\n    email: 'pranav@razorpay.com',\n    contact: '8879524924',\n    name: 'Pranav Gupta'\n  },\n  theme: {\n    color: '#F37254'\n  }\n}\n\nvar successCallback = function(success) {\n  alert('payment_id: ' + success.razorpay_payment_id)\n  var orderId = success.razorpay_order_id\n  var signature = success.razorpay_signature\n}\n\nvar cancelCallback = function(error) {\n  alert(error.description + ' (Error '+error.code+')')\n}\n\nRazorpayCheckout.on('payment.success', successCallback)\nRazorpayCheckout.on('payment.cancel', cancelCallback)\nRazorpayCheckout.open(options)\n```\n\nChange the options accordingly. Supported options can be found [here](https://docs.razorpay.com/docs/checkout-form#checkout-fields).\n\n### External Wallets\nWe also support **displaying** wallets like Citrus and Paytm, which are currently not a part of the standard Razorpay offering. After the user chooses which one of these they want, control is handed back to you with data like wallet name, contact and email of the user. This helps you take the next steps towards facilitating the payment and Razorpay's role in that payment cycle ends there.\n\nTo add a wallet, change the `options` JSON as follows:\n```js\nvar options = {\n  currency: 'INR',\n  key: 'rzp_test_1DP5mmOlF5G5ag',\n  amount: '5000',\n  external: {\n    wallets: ['paytm']\n  },\n  ...\n  ...\n  ...\n}\n```\n\nTo get callback for this, add this before calling `open`:\n```js\nRazorpayCheckout.on('payment.external_wallet', externalWalletCallback)\n```\n\n### Legacy\n\nThis is legacy integration code and we will continue to support it till further notice. Your server needs to send capture request in this scenario, after the payment is completed.\n\n```js\nvar options = {\n  description: 'Credits towards consultation',\n  image: 'https://i.imgur.com/3g7nmJC.png',\n  currency: 'INR',\n  key: 'rzp_test_1DP5mmOlF5G5ag',\n  amount: '5000',\n  name: 'foo',\n  prefill: {\n    email: 'pranav@razorpay.com',\n    contact: '8879524924',\n    name: 'Pranav Gupta'\n  },\n  theme: {\n    color: '#F37254'\n  }\n}\n\nvar successCallback = function(payment_id) {\n  alert('payment_id: ' + payment_id)\n}\n\nvar cancelCallback = function(error) {\n  alert(error.description + ' (Error '+error.code+')')\n}\n\nRazorpayCheckout.open(options, successCallback, cancelCallback)\n```\n\n## Android Lifecycle Guide \n***It is recomended that you read [this](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#lifecycle-guide) first before proceeding with this section***\n\nSince our plugin launches a new activity on Android, the cordova activity goes in the background\nand might get destroyed by the Android System. For this scenario, you need to add the following code to make sure the \npayment result is delivered after the cordova activity is recreated:\n```\n// You need to register an event listener for the `resume` event\ndocument.addEventListener('resume', onResume, false);\nvar onResume = function(event) {\n        // Re-register the payment success and cancel callbacks\n        RazorpayCheckout.on('payment.success', successCallback)\n        RazorpayCheckout.on('payment.cancel', cancelCallback)\n        // Pass on the event to RazorpayCheckout\n        RazorpayCheckout.onResume(event);\n      };\n\n\n```\n\n## Things to be taken care:\n\n- Add the integration code snippet after `deviceready` event.\n\n- On browser platform, change the [Content Security Policy](https://content-security-policy.com/) to whitelist the `razorpay.com` domain.\n\n```html\n<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self' https://*.razorpay.com data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *\">\n\n```\n\n- Due to the way ionic works, we can't support `ionic serve` at the moment. Try using `ionic run browser` instead of `ionic serve`. `ionic serve` doesn't support cordova browser plugins at the moment. See [driftyco/ionic-cli#354](https://github.com/driftyco/ionic-cli/issues/354).\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razorpay/razorpay-cordova.git"
+  },
+  "scripts": {},
+  "version": "1.3.12"
+}

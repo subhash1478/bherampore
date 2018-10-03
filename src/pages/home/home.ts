@@ -126,5 +126,13 @@ export class HomePage {
         dismiss() {
           this.viewCtrl.dismiss();
         }
+        shopnow(){
+          let item={
+            _id:'5b05aefe5c669d0676a6b1f6',
+            title:'Restaurant'
+          }
+          this.navCtrl.push("MyshopPage", { id: item._id ,title:item.title})
+          
+        }
       }
       

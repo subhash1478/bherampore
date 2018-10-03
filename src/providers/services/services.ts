@@ -233,7 +233,11 @@ return this.userDeatilsData
   }
 
   
-  
+  getShopProduct(){
+    return this.http.get(`${Config.SAIL_ENDPOINT}/shop-product`)
+    .map((response:Response)=>response)
+    .catch(this.handleError)
+  }
   getProduct(data){
     return this.http.get(`${Config.SAIL_ENDPOINT}/get-product?id=${data}`)
     .map((response:Response)=>response)

@@ -5,8 +5,7 @@ import { UtilityProvider } from '../../providers/utility/utility'
 import {  ModalController, ViewController } from 'ionic-angular';
 import { Events } from 'ionic-angular'; 
 import { Config } from '../../config';
-import { log } from 'util';
-/**
+ /**
 * Generated class for the ProductPage page.
 *
 * See https://ionicframework.com/docs/components/#navigation for more info on

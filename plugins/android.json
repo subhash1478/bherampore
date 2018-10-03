@@ -1,0 +1,93 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.razorpay.cordova": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "com.telerik.plugins.nativepagetransitions": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-accountkit": {
+      "APP_ID": "2270481933179280",
+      "APP_NAME": "localshop",
+      "CLIENT_TOKEN": "492d0974d764ba29ee6eb1f2ae692184",
+      "API_VERSION": "v1.0",
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "2270481933179280",
+      "APP_NAME": "localshop",
+      "ANDROID_SDK_VERSION": "4.+",
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyDLWolRcoSnnPllGnWPrc44Wm0wUbEyt94",
+      "PLAY_SERVICES_VERSION": "12.0.0",
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.0",
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-sms": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+      "OKHTTP_VERSION": "3.+",
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.baharampur.one.touch"
+    }
+  }
+}

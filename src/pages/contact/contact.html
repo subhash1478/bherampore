@@ -15,8 +15,8 @@
   <div class="profile-imgouter" >
       <div class="img-bgt"></div>
       <div (click)="updateProfileImage()" class="p-img-outer">
-        <img class="animated flip"  *ngIf="userdata.profile_image!=null" [src]="userdata.profile_image">
 
+        
         
         <img [defaultImage]="defaultImage" [lazyLoad]="userdata.profile_image" [offset]="offset">
 

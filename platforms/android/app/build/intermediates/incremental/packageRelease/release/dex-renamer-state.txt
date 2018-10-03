@@ -1,0 +1,4 @@
+#Mon Oct 01 01:18:10 IST 2018
+base.0=E\:\\workspace\\bherampur project\\brahmapur\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=E\:\\workspace\\bherampur project\\brahmapur\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex
