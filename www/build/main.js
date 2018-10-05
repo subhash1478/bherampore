@@ -204,6 +204,11 @@ var ServicesProvider = /** @class */ (function () {
             .map(function (response) { return response; })
             .catch(this.handleError);
     };
+    ServicesProvider.prototype.getShopProduct = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_7__config__["a" /* Config */].SAIL_ENDPOINT + "/shop-product")
+            .map(function (response) { return response; })
+            .catch(this.handleError);
+    };
     ServicesProvider.prototype.getProduct = function (data) {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_7__config__["a" /* Config */].SAIL_ENDPOINT + "/get-product?id=" + data)
             .map(function (response) { return response; })
@@ -373,7 +378,7 @@ webpackEmptyAsyncContext.id = 146;
 
 var map = {
 	"../pages/address/address.module": [
-		411,
+		412,
 		32
 	],
 	"../pages/addreview/addreview.module": [
@@ -381,19 +386,19 @@ var map = {
 		7
 	],
 	"../pages/apptour/apptour.module": [
-		412,
+		411,
 		31
 	],
 	"../pages/cart/cart.module": [
-		414,
+		417,
 		30
 	],
 	"../pages/chat/chat.module": [
-		417,
+		415,
 		1
 	],
 	"../pages/checkout/checkout.module": [
-		415,
+		414,
 		9
 	],
 	"../pages/cms/cms.module": [
@@ -401,23 +406,23 @@ var map = {
 		29
 	],
 	"../pages/contact/contact.module": [
-		419,
+		442,
 		3
 	],
 	"../pages/feedback/feedback.module": [
-		418,
+		420,
 		28
 	],
 	"../pages/gallery/gallery.module": [
-		420,
+		418,
 		27
 	],
 	"../pages/gallerymodal/gallerymodal.module": [
-		421,
+		443,
 		26
 	],
 	"../pages/home/home.module": [
-		422,
+		419,
 		25
 	],
 	"../pages/inbox/inbox.module": [
@@ -425,19 +430,19 @@ var map = {
 		0
 	],
 	"../pages/login/login.module": [
-		424,
+		421,
 		24
 	],
 	"../pages/my-order/my-order.module": [
-		425,
+		427,
 		23
 	],
 	"../pages/myshop/myshop.module": [
-		426,
+		425,
 		22
 	],
 	"../pages/notification/notification.module": [
-		427,
+		422,
 		21
 	],
 	"../pages/order-request/order-request.module": [
@@ -445,19 +450,19 @@ var map = {
 		20
 	],
 	"../pages/phone-verification/phone-verification.module": [
-		429,
+		424,
 		11
 	],
 	"../pages/post/post.module": [
-		430,
+		426,
 		6
 	],
 	"../pages/postdetails/postdetails.module": [
-		431,
+		429,
 		8
 	],
 	"../pages/product/product.module": [
-		432,
+		430,
 		19
 	],
 	"../pages/profile/profile.module": [
@@ -465,15 +470,15 @@ var map = {
 		10
 	],
 	"../pages/promoter-category/promoter-category.module": [
-		435,
+		432,
 		18
 	],
 	"../pages/promoter-details/promoter-details.module": [
-		434,
+		431,
 		4
 	],
 	"../pages/promotion-modal/promotion-modal.module": [
-		436,
+		434,
 		17
 	],
 	"../pages/qty-modal/qty-modal.module": [
@@ -481,27 +486,27 @@ var map = {
 		16
 	],
 	"../pages/review/review.module": [
-		438,
+		436,
 		5
 	],
 	"../pages/search/search.module": [
-		439,
+		435,
 		2
 	],
 	"../pages/tags/tags.module": [
-		441,
+		438,
 		15
 	],
 	"../pages/vendor/vendor.module": [
-		440,
+		439,
 		14
 	],
 	"../pages/vendorjoin/vendorjoin.module": [
-		442,
+		440,
 		13
 	],
 	"../pages/your-order/your-order.module": [
-		443,
+		441,
 		12
 	]
 };
@@ -797,39 +802,39 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["c" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/address/address.module#AddressPageModule', name: 'AddressPage', segment: 'address', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/apptour/apptour.module#ApptourPageModule', name: 'ApptourPage', segment: 'apptour', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/address/address.module#AddressPageModule', name: 'AddressPage', segment: 'address', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/addreview/addreview.module#AddreviewPageModule', name: 'AddreviewPage', segment: 'addreview', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cart/cart.module#CartPageModule', name: 'CartPage', segment: 'cart', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/checkout/checkout.module#CheckoutPageModule', name: 'CheckoutPage', segment: 'checkout', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cms/cms.module#CmsPageModule', name: 'CmsPage', segment: 'page-cms/pagename/:pagename', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'page-chat/id/:id', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/feedback/feedback.module#FeedbackPageModule', name: 'FeedbackPage', segment: 'feedback', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cms/cms.module#CmsPageModule', name: 'CmsPage', segment: 'page-cms/pagename/:pagename', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cart/cart.module#CartPageModule', name: 'CartPage', segment: 'cart', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/gallery/gallery.module#GalleryPageModule', name: 'GalleryPage', segment: 'page-gallery/id/:id/type/:type', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/gallerymodal/gallerymodal.module#GallerymodalPageModule', name: 'GallerymodalPage', segment: 'gallerymodal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inbox/inbox.module#InboxPageModule', name: 'InboxPage', segment: 'inbox', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/feedback/feedback.module#FeedbackPageModule', name: 'FeedbackPage', segment: 'feedback', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/my-order/my-order.module#MyOrderPageModule', name: 'MyOrderPage', segment: 'my-order', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/myshop/myshop.module#MyshopPageModule', name: 'MyshopPage', segment: 'myshop', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/notification/notification.module#NotificationPageModule', name: 'NotificationPage', segment: 'notification', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/order-request/order-request.module#OrderRequestPageModule', name: 'OrderRequestPage', segment: 'order-request', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inbox/inbox.module#InboxPageModule', name: 'InboxPage', segment: 'inbox', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/phone-verification/phone-verification.module#PhoneVerificationPageModule', name: 'PhoneVerificationPage', segment: 'phone-verification', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/myshop/myshop.module#MyshopPageModule', name: 'MyshopPage', segment: 'myshop', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post/post.module#PostPageModule', name: 'PostPage', segment: 'page-post/id/:id/title/:title', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/my-order/my-order.module#MyOrderPageModule', name: 'MyOrderPage', segment: 'my-order', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/order-request/order-request.module#OrderRequestPageModule', name: 'OrderRequestPage', segment: 'order-request', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/postdetails/postdetails.module#PostdetailsPageModule', name: 'PostdetailsPage', segment: 'page-postdetails/:id', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/product/product.module#ProductPageModule', name: 'ProductPage', segment: 'page-product/id/:id', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/promoter-details/promoter-details.module#PromoterDetailsPageModule', name: 'PromoterDetailsPage', segment: 'page-promoter-details/id/:id/type/:type', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/promoter-category/promoter-category.module#PromoterCategoryPageModule', name: 'PromoterCategoryPage', segment: 'promoter-category', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/promotion-modal/promotion-modal.module#PromotionModalPageModule', name: 'PromotionModalPage', segment: 'promotion-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/qty-modal/qty-modal.module#QtyModalPageModule', name: 'QtyModalPage', segment: 'qty-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/review/review.module#ReviewPageModule', name: 'ReviewPage', segment: 'page-review/id/:id/type/:type', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vendor/vendor.module#VendorPageModule', name: 'VendorPage', segment: 'vendor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/review/review.module#ReviewPageModule', name: 'ReviewPage', segment: 'page-review/id/:id/type/:type', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/qty-modal/qty-modal.module#QtyModalPageModule', name: 'QtyModalPage', segment: 'qty-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tags/tags.module#TagsPageModule', name: 'TagsPage', segment: 'page-tags/id/:id', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/vendor/vendor.module#VendorPageModule', name: 'VendorPage', segment: 'vendor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vendorjoin/vendorjoin.module#VendorjoinPageModule', name: 'VendorjoinPage', segment: 'vendorjoin', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/your-order/your-order.module#YourOrderPageModule', name: 'YourOrderPage', segment: 'page-your-order/id/:id', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/your-order/your-order.module#YourOrderPageModule', name: 'YourOrderPage', segment: 'page-your-order/id/:id', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/contact/contact.module#ContactPageModule', name: 'ContactPage', segment: 'contact', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/gallerymodal/gallerymodal.module#GallerymodalPageModule', name: 'GallerymodalPage', segment: 'gallerymodal', priority: 'low', defaultHistory: [] }
                     ]
                 })
                 //   
@@ -931,7 +936,12 @@ var MyApp = /** @class */ (function () {
     };
     // example of adding a transition when pushing a new page
     MyApp.prototype.goToPage = function (page) {
-        this.nav.push(page);
+        if (page === 'HomePage') {
+            this.nav.setRoot(page);
+        }
+        else {
+            this.nav.push(page);
+        }
     };
     MyApp.prototype.CmsPage = function (page) {
         this.nav.push("CmsPage", { pagename: page });
@@ -949,7 +959,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"E:\workspace\bherampur project\brahmapur\src\app\app.html"*/'<ion-menu type="overlay" [content]="mycontent">\n\n      <button ion-button menuToggle class="btn-closeM">\n\n            <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-content  class="side_menu_content">\n\n            \n\n            <div class="profile-imgB">\n\n                  <div class="profile_imgoutline">\n\n                        <div class="profile_img_side" [ngStyle]="{\'background\' : \'url(\' + user.profile_image + \')center no-repeat\'}" >\n\n                        </div>\n\n                  </div>\n\n                  <p class="nm-tilte" text-center>{{user.firstname}} {{user.lastname}}</p>\n\n                  <p class="nm-eml" text-center>{{user.email}}</p>\n\n            </div>\n\n            \n\n            <ion-list class="sidemenu_list">\n\n                  <button menuClose ion-item  (click)="goToPage(\'SearchPage\')" >\n\n                        <ion-icon name="search"></ion-icon>\n\n                        Search\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToChat()" >\n\n                        <ion-icon name="mail"></ion-icon>\n\n                        \n\n                        Inbox\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'ContactPage\')" >\n\n                        <ion-icon name="settings"></ion-icon>\n\n                        \n\n                        My Account\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'MyOrderPage\')" >\n\n                        <ion-icon name="paper"></ion-icon> \n\n                        My Order\n\n                  </button>\n\n             \n\n                  <button menuClose ion-item (click)="goToPage(\'CartPage\')">\n\n                        <ion-icon name="cart"></ion-icon> \n\n                        Cart\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'VendorjoinPage\')" >\n\n                        <ion-icon name="people"></ion-icon>\n\n                        Became a member\n\n                  </button>\n\n                  \n\n                  <button menuClose ion-item   (click)="CmsPage(\'privacy\')" >\n\n                        <ion-icon name="paper"></ion-icon>\n\n                        \n\n                        Privacy Policy\n\n                  </button>\n\n                  <button menuClose ion-item    (click)="CmsPage(\'terms\')" >\n\n                        <ion-icon name="document"></ion-icon>\n\n                        \n\n                        Terms and Conditions\n\n                  </button>\n\n                  \n\n                  \n\n                  \n\n                  <button menuClose ion-item   (click)="goToPage(\'FeedbackPage\')" >\n\n                        <ion-icon name="at"></ion-icon>\n\n                        \n\n                        Feedback \n\n                  </button>\n\n                  <button menuClose ion-item (click)="logout()" >\n\n                        <ion-icon name="log-out"></ion-icon>\n\n                        \n\n                        Logout\n\n                  </button>\n\n            </ion-list>\n\n            \n\n      </ion-content>\n\n      \n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\workspace\bherampur project\brahmapur\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"E:\workspace\bherampur project\brahmapur\src\app\app.html"*/'<ion-menu type="overlay" [content]="mycontent">\n\n      <button ion-button menuToggle class="btn-closeM">\n\n            <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-content  class="side_menu_content">\n\n            <div class="profile-imgB">\n\n                  <div class="profile_imgoutline">\n\n                        <div class="profile_img_side" [ngStyle]="{\'background\' : \'url(\' + user.profile_image + \')center no-repeat\'}" >\n\n                        </div>\n\n                  </div>\n\n                  <p class="nm-tilte" text-center>{{user.firstname}} {{user.lastname}}</p>\n\n                  <p class="nm-eml" text-center>{{user.email}}</p>\n\n            </div>\n\n            <ion-list class="sidemenu_list">\n\n                  <button menuClose ion-item  (click)="goToPage(\'HomePage\')" >\n\n                        <ion-icon name="home"></ion-icon>\n\n                        Home\n\n                  </button>\n\n                  <button menuClose ion-item  (click)="goToPage(\'MyshopPage\')" >\n\n                        <ion-icon name="pizza"></ion-icon>\n\n                        Order Food\n\n                  </button>\n\n                  <button menuClose ion-item  (click)="goToPage(\'SearchPage\')" >\n\n                        <ion-icon name="search"></ion-icon>\n\n                        Search\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToChat()" >\n\n                        <ion-icon name="mail"></ion-icon>\n\n                        Inbox\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'ContactPage\')" >\n\n                        <ion-icon name="settings"></ion-icon>\n\n                        My Account\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'MyOrderPage\')" >\n\n                        <ion-icon name="paper"></ion-icon> \n\n                        My Order\n\n                  </button>\n\n                  <button menuClose ion-item (click)="goToPage(\'CartPage\')">\n\n                        <ion-icon name="cart"></ion-icon> \n\n                        Cart\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'VendorjoinPage\')" >\n\n                        <ion-icon name="people"></ion-icon>\n\n                        Became a member\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="CmsPage(\'privacy\')" >\n\n                        <ion-icon name="paper"></ion-icon>\n\n                        Privacy Policy\n\n                  </button>\n\n                  <button menuClose ion-item    (click)="CmsPage(\'terms\')" >\n\n                        <ion-icon name="document"></ion-icon>\n\n                        Terms and Conditions\n\n                  </button>\n\n                  <button menuClose ion-item   (click)="goToPage(\'FeedbackPage\')" >\n\n                        <ion-icon name="at"></ion-icon>\n\n                        Feedback \n\n                  </button>\n\n                  <button menuClose ion-item (click)="logout()" >\n\n                        <ion-icon name="log-out"></ion-icon>\n\n                        Logout\n\n                  </button>\n\n            </ion-list>\n\n      </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav #mycontent [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\workspace\bherampur project\brahmapur\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_onesignal__["a" /* OneSignal */],

@@ -384,4 +384,6 @@ getUserRating(data){
   .map((response:Response)=>response)
   .catch(this.handleError)
  }
+
+ 
 }

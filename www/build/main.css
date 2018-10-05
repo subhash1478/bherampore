@@ -48478,6 +48478,12 @@ page-my-order .item-md ion-thumbnail[item-start] img {
   }
 }
 
+page-myshop ion-card img {
+  display: block;
+  height: 150px;
+  width: 100%;
+}
+
 page-notification .item {
   margin-bottom: 6px;
   background-color: #fff;

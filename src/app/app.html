@@ -3,7 +3,6 @@
             <ion-icon name="menu"></ion-icon>
       </button>
       <ion-content  class="side_menu_content">
-            
             <div class="profile-imgB">
                   <div class="profile_imgoutline">
                         <div class="profile_img_side" [ngStyle]="{'background' : 'url(' + user.profile_image + ')center no-repeat'}" >
@@ -12,27 +11,31 @@
                   <p class="nm-tilte" text-center>{{user.firstname}} {{user.lastname}}</p>
                   <p class="nm-eml" text-center>{{user.email}}</p>
             </div>
-            
             <ion-list class="sidemenu_list">
+                  <button menuClose ion-item  (click)="goToPage('HomePage')" >
+                        <ion-icon name="home"></ion-icon>
+                        Home
+                  </button>
+                  <button menuClose ion-item  (click)="goToPage('MyshopPage')" >
+                        <ion-icon name="pizza"></ion-icon>
+                        Order Food
+                  </button>
                   <button menuClose ion-item  (click)="goToPage('SearchPage')" >
                         <ion-icon name="search"></ion-icon>
                         Search
                   </button>
                   <button menuClose ion-item   (click)="goToChat()" >
                         <ion-icon name="mail"></ion-icon>
-                        
                         Inbox
                   </button>
                   <button menuClose ion-item   (click)="goToPage('ContactPage')" >
                         <ion-icon name="settings"></ion-icon>
-                        
                         My Account
                   </button>
                   <button menuClose ion-item   (click)="goToPage('MyOrderPage')" >
                         <ion-icon name="paper"></ion-icon> 
                         My Order
                   </button>
-             
                   <button menuClose ion-item (click)="goToPage('CartPage')">
                         <ion-icon name="cart"></ion-icon> 
                         Cart
@@ -41,34 +44,24 @@
                         <ion-icon name="people"></ion-icon>
                         Became a member
                   </button>
-                  
                   <button menuClose ion-item   (click)="CmsPage('privacy')" >
                         <ion-icon name="paper"></ion-icon>
-                        
                         Privacy Policy
                   </button>
                   <button menuClose ion-item    (click)="CmsPage('terms')" >
                         <ion-icon name="document"></ion-icon>
-                        
                         Terms and Conditions
                   </button>
-                  
-                  
-                  
                   <button menuClose ion-item   (click)="goToPage('FeedbackPage')" >
                         <ion-icon name="at"></ion-icon>
-                        
                         Feedback 
                   </button>
                   <button menuClose ion-item (click)="logout()" >
                         <ion-icon name="log-out"></ion-icon>
-                        
                         Logout
                   </button>
             </ion-list>
-            
       </ion-content>
-      
 </ion-menu>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav #mycontent [root]="rootPage"></ion-nav>

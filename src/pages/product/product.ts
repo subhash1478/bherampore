@@ -51,6 +51,10 @@ export class ProductPage {
     }
     addToCart(item) {
       let modal = this.modalCtrl.create('QtyModalPage',{id:item});
+      modal.onDidDismiss(data => {
+        console.log(data);
+        this.countCartItem()
+      });
       modal.present();
     }
     countCartItem(){

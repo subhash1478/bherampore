@@ -1,6 +1,6 @@
 webpackJsonp([19],{
 
-/***/ 432:
+/***/ 430:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductPageModule", function() { return ProductPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product__ = __webpack_require__(538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product__ = __webpack_require__(536);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var ProductPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 538:
+/***/ 536:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -104,7 +104,12 @@ var ProductPage = /** @class */ (function () {
         this.countCartItem();
     };
     ProductPage.prototype.addToCart = function (item) {
+        var _this = this;
         var modal = this.modalCtrl.create('QtyModalPage', { id: item });
+        modal.onDidDismiss(function (data) {
+            console.log(data);
+            _this.countCartItem();
+        });
         modal.present();
     };
     ProductPage.prototype.countCartItem = function () {

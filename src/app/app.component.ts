@@ -66,9 +66,14 @@ export class MyApp {
      // example of adding a transition when pushing a new page
      goToPage(page: any) {
      
-      
+      if(page==='HomePage')
+{
+  this.nav.setRoot(page);
 
-       this.nav.push(page);
+}else{
+  this.nav.push(page);
+
+}
      
      }
     CmsPage(page){
